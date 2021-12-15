@@ -1,0 +1,12 @@
+.header {
+    background-color: #09397E;
+    height: 13vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logoMargin {
+    margin-right: 1.5rem;
+    display: flex;
+}
