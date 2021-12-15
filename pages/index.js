@@ -20,7 +20,7 @@ function Home() {
     acceptTerms: Yup.bool().oneOf(
       [true],
       "Veuillez accepter les conditions générales"
-    )
+    ),
   });
   const formOptions = { resolver: yupResolver(validationSchema) };
 
@@ -28,7 +28,15 @@ function Home() {
   const { errors } = formState;
 
   function onSubmit(data) {
-    console.log(data);
+    axios({
+      method: "POST",
+      url: "https://api.gaylordjulien.dev/bookings",
+      data: data,
+    }).catch((err) => {
+      alert(
+        "Malheureusement notre système de réservation n'est pas joignable pour le moment"
+      );
+    });
 
     return false;
   }
@@ -83,7 +91,7 @@ function Home() {
             <div className="form-group col">
               <label>Date de la réservation</label>
               <input
-                name="dateBook"
+                name="dateBooked"
                 type="date"
                 {...register("dateBooked")}
                 className={`form-control ${
