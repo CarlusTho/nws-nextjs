@@ -32,7 +32,13 @@ function Home() {
       method: "POST",
       url: "https://api.gaylordjulien.dev/bookings",
       data: data,
-    }).catch((err) => {
+    })
+    .then ((response) => {
+      const submitButton = document.getEelementById("send");
+      submitButton.classList.add('disabled');
+      console.log("Données soumises avec succès", response.status);
+    })
+    .catch((err) => {
       alert(
         "Malheureusement notre système de réservation n'est pas joignable pour le moment"
       );
@@ -43,7 +49,7 @@ function Home() {
 
   return (
     <div className="card m-3">
-      <h5 className="card-header">Formulaire de réservation</h5>
+      <h1 className="card-header">Formulaire de réservation</h1>
       <div className="card-body">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-row">
@@ -131,7 +137,7 @@ function Home() {
             </div>
           </div>
           <div className="form-group">
-            <button type="submit" className="btn btn-primary me-1">
+            <button type="submit" id="send" className="btn btn-primary me-1">
               Envoyer
             </button>
             <button
