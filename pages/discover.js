@@ -1,7 +1,7 @@
 export default function Discover() {
   return (
     <>
-      <div></div>
+      <h1>Rêver Rouen avec ses habitants</h1>
     </>
   );
 }
