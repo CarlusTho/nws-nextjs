@@ -49,6 +49,13 @@ export default function Home() {
         </select>
         <div className="invalid-feedback">{errors.title?.message}</div>
       </div>
+      <div className="form-group col-5">
+        <label>Prénom</label>
+        <input
+        name="firstName"
+        type="text"
+        {...register}
+      </div>
     </div>
 
 
