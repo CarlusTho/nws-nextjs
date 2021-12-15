@@ -5,7 +5,7 @@ export default function Button(props) {
   return (
     <>
       <Link href={props.link}>
-        <a className={styles.btn}>{props.linkText}</a>
+        <a className={styles.btn} style={props.style}>{props.linkText}</a>
       </Link>
     </>
   );
